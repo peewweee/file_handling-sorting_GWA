@@ -17,3 +17,9 @@ with open("students_gwa.txt") as input_file:
     # print the name with highest gwa
     print(highest_gwa)
     print(highest_gwa_student)
+
+# Print contents in the file
+with open("students_gwa.txt") as input_file:
+    print("\nStudents' GWA:")
+    for line in input_file:
+        print(line.strip())
