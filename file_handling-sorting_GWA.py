@@ -14,12 +14,18 @@ with open("students_gwa.txt") as input_file:
         if gwa < highest_gwa:
             highest_gwa = gwa
             highest_gwa_student = name
-    # print the name with highest gwa
-    print(highest_gwa)
-    print(highest_gwa_student)
 
+print("\033[0;35m Student with the highest GWA:")
+# print the name with highest gwa
+print("\033[0;34m Student Name:", highest_gwa_student)
+print("\033[0;34m GWA:", highest_gwa)
+
+print("")
 # Print contents in the file
 with open("students_gwa.txt") as input_file:
-    print("\nStudents' GWA:")
+    print("\033[0;32m {:<30}{:<30}".format("Student Name", "GWA"))
     for line in input_file:
-        print(line.strip())
+        student_name, student_gwa = line.strip().split(" - ")
+        name_column = student_name
+        gwa_column = student_gwa
+        print("\033[0;37m {:<30}{:<30}".format(name_column, gwa_column))
